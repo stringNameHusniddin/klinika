@@ -1,24 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Card from "./components/card";
+import Links from "./components/links";
+import Navbar from "./components/navbar";
+import Post from "./components/post";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="bg-[#fafafa] flex items-center justify-center flex-col app">
+      <Navbar/>
+      <h1 className='text-[#690f7f] text-[30px] pb-[30px] px-[15px  ] text-left w-[1200px]' style={{ fontFamily: 'Gotham Pro Bold' }}>Акциялар, Чегирмалар, Янгиликлар</h1>
+      <Card />
+      <Links/>
+      <Post/>
     </div>
   );
 }

@@ -1,13 +1,36 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url(//db.onlinewebfonts.com/c/013bc3f20021c3221eeb427f1f3929f4?family=Gotham+Pro);
+
+@font-face {
+  font-family: "Gotham Pro Bold";
+  src: url("//db.onlinewebfonts.com/t/013bc3f20021c3221eeb427f1f3929f4.eot");
+  src: url("//db.onlinewebfonts.com/t/013bc3f20021c3221eeb427f1f3929f4.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/013bc3f20021c3221eeb427f1f3929f4.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/013bc3f20021c3221eeb427f1f3929f4.woff") format("woff"), url("//db.onlinewebfonts.com/t/013bc3f20021c3221eeb427f1f3929f4.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/013bc3f20021c3221eeb427f1f3929f4.svg#Gotham Pro") format("svg");
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@import url(//db.onlinewebfonts.com/c/323b7229abd327d428021a6d49a7413d?family=Gotham+Pro+Light);
+
+@font-face {
+  font-family: "Gotham Pro Light";
+  src: url("//db.onlinewebfonts.com/t/323b7229abd327d428021a6d49a7413d.eot");
+  src: url("//db.onlinewebfonts.com/t/323b7229abd327d428021a6d49a7413d.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/323b7229abd327d428021a6d49a7413d.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/323b7229abd327d428021a6d49a7413d.woff") format("woff"), url("//db.onlinewebfonts.com/t/323b7229abd327d428021a6d49a7413d.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/323b7229abd327d428021a6d49a7413d.svg#Gotham Pro Light") format("svg");
+}
+
+@import url(//db.onlinewebfonts.com/c/07a38bbad54db72a40b406bed1c72f53?family=Gotham+Pro);
+
+@font-face {
+  font-family: "Gotham Pro";
+  src: url("//db.onlinewebfonts.com/t/07a38bbad54db72a40b406bed1c72f53.eot");
+  src: url("//db.onlinewebfonts.com/t/07a38bbad54db72a40b406bed1c72f53.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/07a38bbad54db72a40b406bed1c72f53.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/07a38bbad54db72a40b406bed1c72f53.woff") format("woff"), url("//db.onlinewebfonts.com/t/07a38bbad54db72a40b406bed1c72f53.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/07a38bbad54db72a40b406bed1c72f53.svg#Gotham Pro") format("svg");
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.app{
+  min-height: 100vh;
+}
+
+.btn:hover > span{
+  width: 100%;
+  transition: all 0.3s;
 }
