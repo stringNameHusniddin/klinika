@@ -1,16 +1,23 @@
-import Card from "./components/card";
-import Links from "./components/links";
-import Navbar from "./components/navbar";
-import Post from "./components/post";
+import { Route, Routes } from 'react-router-dom'
+import Links from './components/links';
+
+import Navbar from './components/navbar';
+import Post from './components/post';
+import DoctorDetail from './pages/doctorDetail';
+import Home from './pages/home';
+import KlinikaDetail from './pages/klinikaDetail';
 
 function App() {
   return (
     <div className="bg-[#fafafa] flex items-center justify-center flex-col app">
-      <Navbar/>
-      <h1 className='text-[#690f7f] text-[30px] pb-[30px] px-[15px  ] text-left w-[1200px]' style={{ fontFamily: 'Gotham Pro Bold' }}>Акциялар, Чегирмалар, Янгиликлар</h1>
-      <Card />
-      <Links/>
-      <Post/>
+      <Navbar />
+      <Routes>
+        <Route element={<Home />} path='/' />
+        <Route element={<KlinikaDetail />} path='/klinikaDetail' />
+        <Route element={<DoctorDetail/>} path='/doctorDetail'/>
+      </Routes>
+      <Links />
+      <Post />
     </div>
   );
 }
