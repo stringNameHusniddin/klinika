@@ -2,10 +2,13 @@ import React from 'react'
 import { doctortI } from '../pages/doctorDetail'
 
 const DoctorDes = ({ doctors }: { doctors: doctortI[] }) => {
+
+    let doctor = localStorage.getItem('doctor')
+
     return (
         <>
             {
-                doctors.map(mal => (
+                doctors.map(mal => mal.name === doctor ? (
                     <div className='w-[1000px] flex flex-col rounded-md bg-white  items-start p-[40px] mb-[30px]' style={{ boxShadow: '0 2px 5px 5px rgba(0,0,0,.1)' }}>
                         <h2 className='text-[#690f7f] text-[30px]' style={{ fontFamily: "Gotham Pro Bold" }}>Квалификация ва тажриба</h2>
                         <div className='flex justify-between w-full border-b-[1px] py-[15px] text-[#6c646e] text-[18px]' style={{fontFamily:'Gotham Pro Light'}}>
@@ -38,7 +41,7 @@ const DoctorDes = ({ doctors }: { doctors: doctortI[] }) => {
                             </div>
                         </div>
                     </div>
-                ))
+                ):null)
             }
         </>
     )

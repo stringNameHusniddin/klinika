@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 interface linksI {
     name: string
@@ -10,15 +11,9 @@ const klinika: linksI[] = [{
     name: 'Даниел Ҳилл Медикал',
 }, {
     name: 'Osiyo tibbiyot markazi',
-}, {
-    name: 'iMedClinic',
-}, {
-    name: 'Дармон шифо маскани',
-}, {
-    name: 'HasMed Clinics',
-}, {
-    name: 'Allergo Life',
-},]
+},{
+    name:"Eurosun Healthcare"
+}]
 
 const mutaxasisilik: linksI[] = [{
     name: "Акушерлик"
@@ -42,7 +37,7 @@ const mutaxasisilik: linksI[] = [{
     name:'Гепатология'
 },{
     name:"Гинекология"
-}]
+},]
 
 const Links = () => {
 
@@ -58,7 +53,7 @@ const Links = () => {
             </div>
             <div className='flex w-full flex-wrap p-[30px]'>
                 {
-                    isKlinika ? klinika.map(mal => <p className='text-[#337ab7] cursor-pointer w-4/12 px-[15px]'>{mal.name}</p>) : mutaxasisilik.map(mal => <p className='text-[#337ab7] cursor-pointer w-4/12 px-[15px]'>{mal.name}</p>)
+                    isKlinika ? klinika.map(mal => <Link to='/klinikaDetail' onClick={()=>localStorage.setItem('klinika', mal.name)} className='text-[#337ab7] cursor-pointer w-4/12 px-[15px]'>{mal.name}</Link>) : mutaxasisilik.map(mal => <p className='text-[#337ab7] cursor-pointer w-4/12 px-[15px]'>{mal.name}</p>)
                 }
             </div>
         </div>

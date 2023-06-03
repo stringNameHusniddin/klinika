@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { FaUnlock } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
 
@@ -7,9 +8,9 @@ const Navbar = () => {
 
     return (
         <div className='flex items-center justify-between w-[1200px] h-[90px] mb-[30px]'>
-            <div>
+            <Link to={'/'}>
                 <img src="https://www.klinika.uz/images/logo_purple.png" alt="" />
-            </div>
+            </Link>
             <div className='flex items-center gap-[15px]'>
                 <button className='text-[16px] flex items-center gap-[4px] text-[#690f7f]' style={{ fontFamily: "Gotham Pro" }}><FaUnlock className='text-[14px]' /> Кириш</button>
                 <button onClick={()=>setOpen(true)} className='w-[24px] btn flex flex-col items-end'>
