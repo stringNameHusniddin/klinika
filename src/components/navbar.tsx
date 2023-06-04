@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import { FaUnlock } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
+import { userI } from '../App'
 
-const Navbar = () => {
+const Navbar = ({setUser}:{setUser:React.Dispatch<React.SetStateAction<userI | undefined>>}) => {
 
     const [open, setOpen] = useState<boolean>(false)
+    const token = localStorage.getItem('token')
 
     return (
         <div className='flex items-center justify-between w-[1200px] h-[90px] mb-[30px]'>
@@ -12,7 +14,10 @@ const Navbar = () => {
                 <img src="https://www.klinika.uz/images/logo_purple.png" alt="" />
             </Link>
             <div className='flex items-center gap-[15px]'>
-                <button className='text-[16px] flex items-center gap-[4px] text-[#690f7f]' style={{ fontFamily: "Gotham Pro" }}><FaUnlock className='text-[14px]' /> Кириш</button>
+                {!token ? <Link to={'\login'} className='text-[16px] flex items-center gap-[4px] text-[#690f7f]' style={{ fontFamily: "Gotham Pro" }}><FaUnlock className='text-[14px]' /> Кириш</Link> : <button onClick={()=>{
+                    localStorage.removeItem('token')
+                    setUser(undefined)
+                }} className='text-[16px] flex items-center gap-[4px] text-[#690f7f]' style={{ fontFamily: "Gotham Pro" }}><FaUnlock className='text-[14px]' /> Chiqish</button>}
                 <button onClick={()=>setOpen(true)} className='w-[24px] btn flex flex-col items-end'>
                     <span className='my-[2px] h-[2px] bg-[#690f7f] w-7/12 block'></span>
                     <span className='my-[2px] h-[2px] bg-[#690f7f] w-full block'></span>
